@@ -1,0 +1,215 @@
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>BİLGİ Shuttle MD Edition</title>
+
+    <meta name="author" content="Melih Değiş">
+    <link rel="shortcut icon" href="http://www.bilgi.edu.tr/site_media/images/main/favicon.ico">
+    <link rel="stylesheet" href="http://www.bilgi.edu.tr/site_media/css/style.css?v=2">
+    <link rel="stylesheet" href="http://www.bilgi.edu.tr/site_media/css/base.css?v=1">
+    
+<link rel="stylesheet" href="http://www.bilgi.edu.tr/site_media/css/base-tr.css?v1" type="text/css" media="screen"/>
+<link rel="stylesheet" href="http://www.bilgi.edu.tr/site_media/css/site/static-page.css?v1" type="text/css" media="screen"/>
+
+    <!-- Where the magic has stared to happen-->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" rel="stylesheet">
+    <link href="http://www.justinaguilar.com/animations/css/animations.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".ajax").colorbox({width:"100%", height:"80%"});
+            $(".inline").colorbox({inline:true});
+            });
+    </script>
+
+
+</head>
+<body>
+
+    <div id="container">
+        
+        
+    <header>
+    <div id="header-top">
+        <div id="header-top-wrapper">
+            <div id="header-top-logo"></div>
+            <div id="header-top-shorcuts">
+                <ul>
+
+    <li><a href="http://graduate.bilgi.edu.tr/"><img src="http://www.bilgi.edu.tr/site_media/images/main/hbtn-lisansustu.png" alt="Lisansüstü" /></a></li>
+    <li><a href="http://tanitim.bilgi.edu.tr/"><img src="http://www.bilgi.edu.tr/site_media/images/main/hbtn-adayogrenci.png" alt="Aday Öğrenci" /></a></li>
+    <li><a href="http://www.bilgi.edu.tr/tr/bilgi/bilgi-ogrencileri/">Öğrenci</a></li>
+    <li><a href="http://www.bilgim.org.tr/" target="_blank">Mezun</a></li>
+    <li><a href="http://fast.bilgi.edu.tr/" target="_blank">Çalışan</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div>
+            <ul>
+                <li class="first-child"><img width="7" height="32" src="http://www.bilgi.edu.tr/site_media/images/main/header-nav-first-li.png" alt="#"/></li>
+                <li><a href="http://www.bilgi.edu.tr/tr/universite/">Üniversite</a></li>
+                <li><a href="http://www.bilgi.edu.tr/tr/ogrenim/">Öğrenim</a></li>
+                
+                <li><a href="http://www.bilgi.edu.tr/tr/arastirmalar/">Araştırma</a></li>
+                <li><a href="http://library.bilgi.edu.tr/screens/mainmenu_tr.html">Kütüphane</a></li>
+                <li><a href="http://www.bilgi.edu.tr/tr/bilgide-yasam/">BİLGİ&rsquo;de Yaşam</a></li>
+                <li><a href="http://international.bilgi.edu.tr/tr/">Uluslararası Merkez</a></li>
+                <li><a href="http://tanitim.bilgi.edu.tr/yatay-gecis/" target="_blank">Yatay Geçiş</a></li>
+                <li class="ulimg"><a href="http://bilgi-egitim.com/"><img src="http://www.bilgi.edu.tr/site_media/images/main/hbtn-begitim.png" alt="Bilgi-Eğitim" /></a></li>
+                <li class="last-child"><a id="language-selector" href="http://www.bilgi.edu.tr/en/">English</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div id="bread-crumbs">
+        <ul>
+            <li>buradasınız:</li>
+            <li><a href="http://www.bilgi.edu.tr/tr/">Anasayfa</a></li>
+            
+        </ul>
+    </div>
+
+        
+
+
+<div id="static-wrapper">
+    <div id="static-menu-column">
+
+        <div id="clipart-download-catalogue">
+    <p><a href="http://www.bilgi.edu.tr/tr/katalog-ve-brosurler/">Katalog ve Broşürler</a></p>
+</div>
+
+<div id="follow-bilgi">
+    <p>BİLGİ&rsquo;yi takip et...</p>
+    <p><a href="http://twitter.com/BiLGiOfficial" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/follow-twitter.png" alt="Twitter"/></a><a target="_blank" href="http://www.facebook.com/istanbulbilgiuniversitesi" title="Facebook"><img src="http://www.bilgi.edu.tr/site_media/images/main/follow-facebook.png" alt="Facebook"/></a></p>
+</div>
+    </div>
+    <div id="static-content-column">
+		<div id="static-data">
+            <center><h1>Shuttle Saatleri MD Edition v0.3</h1></center>
+            <hr style="margin-top: 40px;">
+
+            <div class="row">
+            {% for n in nodes %}
+            <div class="col-lg-4 {% cycle 'pullUp' 'pullDown' 'slideUp' 'stretchRight' 'stretchLeft' 'slideDown' 'bigEntrance' 'expandOpen'%}">
+                <a class= "ajax" href="{{ n.query_name }}"> <img width="250" height="158" src="{{ n.image.url }}"/>
+                <h4>{{ n.name }}</h4> </a>
+            </div>
+            {% endfor %}
+        </div><!-- /row -->
+			
+			
+			<hr style="margin-top: 40px;">
+
+			<div id="data">
+				
+			</div>
+		</div> 
+    </div>
+</div>
+
+
+        
+    <footer>
+    <section id="footer-logo-wrapper">
+        <div id="footer-logo">
+            <div id="follow-bilgi">
+                <p class="follow-bilgi-social">
+                    <span>BİLGİ'yi takip edin...</span>
+
+                    <a target="_blank" href="http://twitter.com/BiLGiOfficial" title="Twitter"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-twitter.png" alt="Twitter"/></a>
+                    <a target="_blank" href="http://www.facebook.com/istanbulbilgiuniversitesi" title="Facebook"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-facebook.png"/></a>
+                    <a target="_blank" href="http://www.flickr.com/photos/istanbulbilgiuniversite/" title="Flickr"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-flickr.png" alt="Facebook"/></a>
+                    <a target="_blank" href="http://vimeo.com/bilgi" title="Vimeo"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-vimeo.png" alt="Facebook"/></a>
+                    <a target="_blank" href="http://instagram.com/bilgiofficial" title="Instagram"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-instagram.png" alt="Instagram"/></a>
+                    <a target="_blank" href="http://www.youtube.com/user/IstanbulBilgiUni" title="Youtube"><img src="http://www.bilgi.edu.tr/site_media/images/main/sm-youtube.png" alt="Youtube"/></a>
+                </p>
+                <div class="pull-right">
+                <p class="follow-bilgi-video">
+                    <span>BİLGİ'de Hayat Video</span>
+                    <a href="http://vimeo.com/108565031"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-video.png" alt="BİLGİ'de Hayat Video"/></a>
+                </p>
+                <p class="follow-bilgi-sanal-tur">
+                    <span>BİLGİ sanal tur...</span>
+                    <a href="#" onClick="javascript:window.open('http://www.bilgi.edu.tr/weblink/360/santral/bunv_santral.html','_blank','status=yes,top=0,left=0,width=900,height=600');"><img src="http://www.bilgi.edu.tr/site_media/images/main/icon-360-campuses.png" alt="BİLGİ Sanal Tur"/></a>
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-info-wrapper">
+        <div id="footer-info">
+            <a href="http://www.laureate.net/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-laureate.png" alt="Laureate Logo" /></a>
+
+
+		    <div class="pull-right flgs">
+		    <a href="http://www.santralistanbul.org/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-santralistanbul.png" alt="santralistanbul" /></a>
+            <a href="http://www.kureselsorunlarplatformu.org/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-kureselsorunlar.png" alt="Küresel Sorunlar Platformu" /></a>
+            <a href="http://www.eua.be/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-eua.png" alt="European University Association" /></a>
+            <a href="http://ungc.bilgi.edu.tr/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-globalcompact.png" alt="Global Compact Logo" /></a>
+            <a href="http://www.iau-aiu.net/" target="_blank"><img src="http://www.bilgi.edu.tr/site_media/images/main/fbtn-inassoc.png" alt="International Association of Universities" /></a>
+		    </div>
+        </div>
+    </section>
+    <section id="footer-address-wrapper">
+        <div id="footer-address">
+            <div id="footer-address-kustepe">
+                <p class="adressname">Kuştepe</p>
+                <p>İnönü Cad. No: 6<br/>Kuştepe 34387<br/>Şişli / İstanbul</p>
+                <a class="map" target="_blank" title="İstanbul Bilgi Üniversitesi, Kuştepe Kampüsü" href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=%c4%b0stanbul+Bilgi+%c3%9cniversitesi&amp;aq=&amp;sll=41.00527,28.97696&amp;sspn=2.483073,3.392029&amp;ie=UTF8&amp;hq=%c4%b0stanbul+Bilgi+%c3%9cniversitesi&amp;hnear=&amp;radius=15000&amp;ll=41.053337,29.022789&amp;spn=0.155081,0.212002&amp;t=m&amp;z=13&amp;vpsrc=6&amp;iwloc=A&amp;cid=6037608770355275864">harita</a>
+                
+                
+                
+            </div>
+            <div id="footer-address-dolapdere">
+                <p class="adressname">Dolapdere</p>
+                <p>Hacıahmet Mahallesi<br/>Pir Hüsamettin Sokak No:20<br/>34440 Beyoğlu İstanbul</p>
+                <a class="map" target="_blank" title="İstanbul Bilgi Üniversitesi, Dolapdere Kampüsü" href="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kurtulu%C5%9F+Deresi+Cad.+Yahya+K%C3%B6pr%C3%BCs%C3%BC+Sok.+No:+1+Dolapdere&amp;aq=&amp;sll=41.039165,28.972514&amp;sspn=0.038778,0.053&amp;vpsrc=6&amp;ie=UTF8&amp;hq=&amp;hnear=Hac%C4%B1ahmet+Mh.,+Yahya+K%C3%B6pr%C3%BCs%C3%BC+Sk,+Beyo%C4%9Flu,+Turkey&amp;ll=41.039165,28.972514&amp;spn=0.009694,0.01325&amp;t=m&amp;z=17&amp;iwloc=A">harita</a>
+                
+                
+            </div>
+            <div id="footer-address-santral">
+                <p class="adressname">santral<span style="font-weight: normal;">istanbul</span></p
+                <p>Eski Silahtarağa Elektrik Santralı<br/>Kazım Karabekir Cad. No: 2/13<br/>34060 Eyüp İstanbul</p>
+                <a class="map" target="_blank" title="İstanbul Bilgi Üniversitesi, Santral Kampüsü" href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=%c4%b0stanbul+Bilgi+%c3%9cniversitesi&amp;aq=&amp;sll=41.00527,28.97696&amp;sspn=2.483073,3.392029&amp;ie=UTF8&amp;hq=%c4%b0stanbul+Bilgi+%c3%9cniversitesi&amp;hnear=&amp;radius=15000&amp;ll=41.053337,29.022789&amp;spn=0.155081,0.212002&amp;t=m&amp;z=13&amp;vpsrc=6&amp;iwloc=A&amp;cid=9229145791593233541">harita</a> - <a href="http://www.bilgi.edu.tr/site_media/uploads/files/2015/01/13/santral_kampusu_harita.pdf" title="İstanbul Bilgi Üniversitesi, Santral Kampüs Haritası PDF" class="map" target="_blank">Kampüs Haritası</a>
+
+                
+                
+            </div>
+            <div id="footer-address-callcenter">
+                <p class="nametag">Call Center</p>
+                <p id="callcenter-phone">444 0 428</p>
+            </div>
+            <div id="footer-address-info">
+                <p><a href="http://www.bilgi.edu.tr/tr/universite/bilgi-edinme/">Bilgi Edinme</a></p>
+            </div>
+            <div id="footer-address-email">
+                <p class="nametag">e-posta</p>
+                <p><a id="main-email-rot" href="#">mdegis@cs.bilgi.edu.tr</a></p>
+            </div>
+        </div>
+        <p id="footer-end"><span>&copy; 2015</span></p>
+    </section>
+</footer>
+
+
+    </div>  
+</body>
+
+</html>

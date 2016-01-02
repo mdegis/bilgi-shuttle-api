@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>.:Login:.</title>
+    <!-- Core CSS -->
+    <link href="{% static "css/style.css"%}" rel="stylesheet" />
+    <link href="{% static "css/signin.css"%}" rel="stylesheet" />
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-lock"></span> Login</div>
+
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" action="{% url 'django.contrib.auth.views.login' %}" method="POST">
+
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="id_username" class="col-sm-3 control-label">
+                                    Username</label>
+                                <div class="col-sm-9">
+                                    <input id="id_username" name="username" type="text" placeholder="Username" class="frm-content"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_password" class="col-sm-3 control-label">
+                                    Password</label>
+                                <div class="col-sm-9">
+                                    <input id="id_password" name="password" type="password" placeholder="Password" class="frm-content"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group last">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        Sign in</button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="next" value="/" />
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        Not Registred? <a href="">Register here</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
