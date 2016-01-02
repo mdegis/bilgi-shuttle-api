@@ -1,8 +1,7 @@
 ## Bilgi Shuttle
 
 Doğru düzgün dokumantasyon 06.01.16 tarihinden sonra yapılacak
-
-<iframe src="//giphy.com/embed/TEBbj68UApopq" width="480" height="336" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![gif](https://media.giphy.com/media/TEBbj68UApopq/giphy.gif)
 
 ### Kullanım:
 
