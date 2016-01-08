@@ -3,12 +3,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.generic import TemplateView
 from respite.urls import resource, routes, templates
-from bilgi.views import PostViews
+from shuttle.views import PostViews
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    url(r'^admin', include(admin.site.urls)),
-    url(r'^favicon.ico$', RedirectView.as_view(url='http://www.bilgi.edu.tr/site_media/images/main/favicon.ico', permanent=True), name='some_redirect'),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 ]
@@ -21,6 +20,18 @@ urlpatterns += resource(
             view = 'index',
             method = 'GET',
             name = 'main'
+        ),
+        routes.route(
+            regex = r'^upload%s$' % (templates.format),
+            view = 'upload',
+            method = 'GET',
+            name = 'upload'
+        ),
+        routes.route(
+            regex = r'^upload%s$' % (templates.format),
+            view = 'process_file',
+            method = 'POST',
+            name = 'process_file'
         ),
         routes.route(
             regex = r'^(?P<campus>[a-zA-Z]+)%s$' % (templates.format),

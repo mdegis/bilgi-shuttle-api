@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'respite',
-    'bilgi',
+    'shuttle',
 )
 
 #respite ile baslayan son uc eklendi
@@ -66,7 +66,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'shuttle.urls'
 
 WSGI_APPLICATION = 'shuttle.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

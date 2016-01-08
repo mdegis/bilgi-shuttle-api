@@ -1,0 +1,11 @@
+{% load static %}
+<html>
+<body>
+
+    <a href="{% static "raw.txt" %}" download="raw.txt"> Click here to download example raw data</a>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <input type="file" name="raw_shuttle" />
+        <input type="submit" name="submit" value="Upload" />
+    </form>
+</body>
+</html>
