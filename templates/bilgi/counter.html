@@ -6,6 +6,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
 		<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
 		<link href="{% static "css/mdmain.css" %}" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<script type="text/javascript">
 			function startTimer(duration, display) {
 		    var timer = duration, minutes, seconds;
@@ -27,7 +28,7 @@
 		        }
 		    }, 1000);
 		}
-		</script>		
+		</script>
 
 	</head>
 	<body>
@@ -36,8 +37,15 @@
 	<h1 style="text-align:center;">{{ start_node.name }}</h1>
 	<hr>
 	<div class="row">
-		{% for r in routes %}		
-        <div class="col-lg-4" >
+		{% for r in routes %}
+		<div class="col-lg-4" >
+		{% if r.next.ring %}
+			<!-- <span id="clock{{r.id}}"><i class="fa fa-circle-o-notch fa-spin"></i>RING</span> -->
+  <span id="clock{{r.id}}">
+    <i class="fa fa-circle-o-notch fa-spin fa-stack-2x"></i>
+    <strong>RING</strong>
+  </span>
+		{% else %}
 			<span id="clock{{r.id}}">--:--</span>
 			<script type="text/javascript">
 				jQuery(function ($) {
@@ -46,7 +54,7 @@
 				    startTimer(fiveMinutes, display);
 				});
 			</script>
-
+		{% endif %}
             <h4>{{ r.destination }}</h4>
             <p>{{ r.raw_data }}</p>
             <p>Next: {{ r.next.next_next_one }}</p>

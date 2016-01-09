@@ -51,17 +51,23 @@ class Route(models.Model):
 			next_in_secs = ""
 		try:
 			next_next_one = time_list[1].time.strftime("%H:%M")
-			return {"in_secs": next_in_secs, "next_next_one":next_next_one}
 		except IndexError, e:
-			return {"in_secs": next_in_secs, "next_next_one":"DONE"}
+			next_next_one = "DONE"
+		return {"in_secs": next_in_secs, "next_next_one":next_next_one, "ring":time_list[0].ring}
 
 
 	def save(self, **kwargs):
 		super(Route, self).save()
 		Time.objects.filter(route=self).delete()
 		if self.raw_data:
+			ring = False
 			for i in self.raw_data.split(" - "):
-				Time(route=self, time=datetime.strptime(i, "%H:%M").time()).save()
+				if i == "Ring":
+					ring = True
+					continue
+				else:
+					Time(ring=ring, route=self, time=datetime.strptime(i, "%H:%M").time()).save()
+					ring = False
 
 	def serialize(self):
 		return {'destination':self.destination.name,
@@ -72,6 +78,7 @@ class Route(models.Model):
 class Time(models.Model):
 	route= models.ForeignKey(Route, related_name='time')
 	time = models.TimeField()
+	ring = models.BooleanField(default=False)
 
 	def __unicode__(self):
 		return self.route.start.name + " => " + self.route.destination.name + " : " + self.time.strftime("%H:%M")
