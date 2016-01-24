@@ -44,16 +44,23 @@ class Route(models.Model):
 		        return end - start
 
 		try:
-			time_list = Time.objects.filter(route=self,
-        			time__gte=datetime.now())
+			time_list = Time.objects.filter(route=self, time__gte=datetime.now())
 			next_in_secs = int(time_diff(datetime.now().time(), time_list[0].time).total_seconds())
 		except IndexError, e:
 			next_in_secs = ""
+		
 		try:
 			next_next_one = time_list[1].time.strftime("%H:%M")
 		except IndexError, e:
 			next_next_one = "DONE"
-		return {"in_secs": next_in_secs, "next_next_one":next_next_one, "ring":time_list[0].ring}
+
+		try:
+			time_list = Time.objects.filter(route=self, time__gte=datetime.now())
+			next_ring = time_list[0].ring
+		except IndexError, e:
+			next_ring = False
+		
+		return {"in_secs": next_in_secs, "next_next_one": next_next_one, "ring": next_ring}
 
 
 	def save(self, **kwargs):

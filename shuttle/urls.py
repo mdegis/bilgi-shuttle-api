@@ -5,11 +5,10 @@ from django.views.generic import TemplateView
 from respite.urls import resource, routes, templates
 from shuttle.views import PostViews
 from django.views.generic import RedirectView
+from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT}),
+    url(r'^admin/', include(admin.site.urls))
 ]
 
 urlpatterns += resource(
@@ -41,3 +40,6 @@ urlpatterns += resource(
         ),
     ]
 )
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
