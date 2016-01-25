@@ -23,20 +23,26 @@ http://127.0.0.1:8000/index.json
 - List of shuttle routes from specific node:
 
 http://127.0.0.1:8000/santral.json
+
 http://127.0.0.1:8000/dolapdere.json
+
 http://127.0.0.1:8000/kustepe.json
+
 http://127.0.0.1:8000/kabatas.json
+
 http://127.0.0.1:8000/halicioglu.json
+
 http://127.0.0.1:8000/pangalti.json
+
 http://127.0.0.1:8000/mecidiyekoy.json
 
 - [Advanced] Update database with text file:
 
-http://127.0.0.1:8000/upload
+shttp://127.0.0.1:8000/upload
 
-    * Example format of text file:
+* Example format of text file:
 
-    http://127.0.0.1:8000/static/raw.txt
+http://127.0.0.1:8000/static/raw.txt
 
 ## Licensing
 Copyright 2016 Melih Değiş
