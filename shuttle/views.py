@@ -1,6 +1,6 @@
 from respite import Views
 from django.contrib.auth.decorators import login_required
-from models import Node, Route, Time
+from models import Node, Route, Time, Database
 from django.shortcuts import redirect
 import codecs
 from django.core.files.base import ContentFile
@@ -32,6 +32,32 @@ class PostViews(Views):
             context = {
             	'start_node':node,
                 'routes': routes,
+            },
+            status = 200
+        )
+
+    def database_check(self, request):
+        self.supported_formats = ['json']
+        database = Database.objects.get(pk=1)
+
+        return self._render(
+            request = request,
+            context = {
+            	'database_version':database,
+            },
+            status = 200
+        )
+
+    def database_fetch_all(self, request):
+        self.supported_formats = ['json']
+        nodes = Node.objects.all()
+        routes = list(Route.objects.all().values('start', 'destination','raw_data'))
+
+        return self._render(
+            request = request,
+            context = {
+                'nodes':nodes,
+            	'routes':routes,
             },
             status = 200
         )

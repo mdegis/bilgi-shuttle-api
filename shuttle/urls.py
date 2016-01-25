@@ -36,7 +36,19 @@ urlpatterns += resource(
             regex = r'^(?P<campus>[a-zA-Z]+)%s$' % (templates.format),
             view = 'show',
             method = 'GET',
-            name = 'post'
+            name = 'routes'
+        ),
+        routes.route(
+            regex = r'^database_check%s$' % (templates.format),
+            view = 'database_check',
+            method = 'GET',
+            name = 'database_check'
+        ),
+        routes.route(
+            regex = r'^database_fetch_all%s$' % (templates.format),
+            view = 'database_fetch_all',
+            method = 'GET',
+            name = 'database_fetch_all'
         ),
     ]
 )

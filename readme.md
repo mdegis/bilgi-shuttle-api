@@ -36,9 +36,17 @@ http://127.0.0.1:8000/pangalti.json
 
 http://127.0.0.1:8000/mecidiyekoy.json
 
+- Check database version for cache:
+
+http://127.0.0.1:8000/database_check.json
+
+- Fetch database:
+
+http://127.0.0.1:8000/database_fetch_all.json
+
 - [Advanced] Update database with text file:
 
-shttp://127.0.0.1:8000/upload
+http://127.0.0.1:8000/upload
 
 * Example format of text file:
 
@@ -59,4 +67,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [LICENSE.md](https://github.com/mdegis/bilgi-shuttle/LICENSE.md) file.
+A copy of the license is available in the repository's [LICENSE.md](https://github.com/mdegis/bilgi-shuttle/blob/master/LICENSE.md) file.
