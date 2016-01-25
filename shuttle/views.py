@@ -11,11 +11,11 @@ class PostViews(Views):
     supported_formats = ['html', 'json', 'xml']
 
     def index(self, request):
+        self.supported_formats = ['json']
         nodes = Node.objects.all()
 
         return self._render(
             request = request,
-            template = 'bilgi/index',
             context = {
                 'nodes': nodes
             },
@@ -23,12 +23,12 @@ class PostViews(Views):
         )
 
     def show(self, request, campus):
+        self.supported_formats = ['json']
         node = Node.objects.get(query_name=campus)
         routes = Route.objects.filter(start=node)
 
         return self._render(
             request = request,
-            template = 'bilgi/counter',
             context = {
             	'start_node':node,
                 'routes': routes,
@@ -37,6 +37,7 @@ class PostViews(Views):
         )
 
     def upload(self, request):
+        self.supported_formats = ['html']
         if request.user.is_staff:
             return self._render(
                 request = request,
@@ -47,6 +48,7 @@ class PostViews(Views):
             return redirect('/admin/login/?next=/upload')
 
     def process_file(self, request):
+        self.supported_formats = ['html']
         if request.user.is_staff:
             a = request.FILES['raw_shuttle']
             data = a.readlines()

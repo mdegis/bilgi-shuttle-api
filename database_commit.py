@@ -8,6 +8,12 @@ from shuttle.models import Node, Route, Time
 from django.core.files.base import ContentFile
 from slugify import slugify
 
+'''
+    Update database with text file (to see the format please check "raw.txt").
+    -- DEBUG purpose only --
+    This file will do the same thing with "/upload".
+'''
+
 def initialize():
     with codecs.open('raw.txt', 'r', 'utf-8') as f:
         data = f.readlines()
@@ -34,7 +40,7 @@ def initialize():
         f = open(image_table[n.name], 'rb')
         s_name = slugify(n.name)
         n.query_name = s_name
-        n.image.save(s_name + ".jpg", ContentFile(f.read()), True)
+        n.image.save(s_name + ".png", ContentFile(f.read()), True)
 
     print "[\xF0\x9F\x8F\x86 ] \x1b[37;44m\033[1m DONE without any error \x1b[0m"
 
