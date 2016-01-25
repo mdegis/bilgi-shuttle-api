@@ -70,5 +70,5 @@ class PostViews(Views):
                 f = open(image_table[n.name], 'rb')
                 s_name = slugify(n.name)
                 n.query_name = s_name
-                n.image.save(s_name + ".jpg", ContentFile(f.read()), True)
+                n.image.save(s_name + ".png", ContentFile(f.read()), True)
         return redirect('/admin/login/?next=/upload')
