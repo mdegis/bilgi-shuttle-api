@@ -17,9 +17,11 @@ git clone https://github.com/mdegis/bilgi-shuttle.git
 ## Usage:
 
 - List of all nodes:
+
 http://127.0.0.1:8000/index.json
 
 - List of shuttle routes from specific node:
+
 http://127.0.0.1:8000/santral.json
 http://127.0.0.1:8000/dolapdere.json
 http://127.0.0.1:8000/kustepe.json
@@ -29,9 +31,11 @@ http://127.0.0.1:8000/pangalti.json
 http://127.0.0.1:8000/mecidiyekoy.json
 
 - [Advanced] Update database with text file:
+
 http://127.0.0.1:8000/upload
 
     * Example format of text file:
+
     http://127.0.0.1:8000/static/raw.txt
 
 ## Licensing
