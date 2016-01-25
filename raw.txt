@@ -1,15 +1,15 @@
-Kabataş:media/orj/kabatas.jpg
-Santral:media/orj/santral.jpg
-Dolapdere:media/orj/dolapdere.jpg
-Kuştepe:media/orj/kustepe.jpg
-Halıcıoğlu:media/orj/halicioglu.jpg
-Pangaltı:media/orj/osmanbey.jpg
-Mecidiyeköy:media/orj/mecidiyekoy.jpg
+Kabataş:media/orj/kabatas.png
+Santral:media/orj/santral.png
+Dolapdere:media/orj/dolapdere.png
+Kuştepe:media/orj/kustepe.png
+Halıcıoğlu:media/orj/halicioglu.png
+Pangaltı:media/orj/pangalti.png
+Mecidiyeköy:media/orj/mecidiyekoy.png
 --DATA--
 Kabataş - Santral
 08:00 - Ring - 20:00 - 20:30
 Kabataş - Dolapdere
-08:00 - Ring - 10:00 - 17:00 - Ring - 17:30 - 10:30 - 11:00 - 11:30 - 12:00 - 12:30 - 13:00 - 13:30 - 14:00 - 14:30 - 15:00 - 15:30 - 16:00 - 16:30
+08:00 - Ring - 10:00 - 10:30 - 11:00 - 11:30 - 12:00 - 12:30 - 13:00 - 13:30 - 14:00 - 14:30 - 15:00 - 15:30 - 16:00 - 16:30 - 17:00 - 17:30
 Santral - Kabataş
 08:30 - Ring - 20:00 - 20:20 - 20:40 - 21:00 - 21:20 - 21:40 - 22:00 - 22:30
 Santral - Kuştepe
