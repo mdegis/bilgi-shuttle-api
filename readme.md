@@ -6,9 +6,9 @@
 
 Please note that it is API for Bilgi Shuttle cross-platform app.
 
-Web version: [bilgi-shuttle-webapp](https://github.com/bilgishuttle/bilgi-shuttle-webapp)
-
-iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
+- Web version: [bilgi-shuttle-webapp](https://github.com/bilgishuttle/bilgi-shuttle-webapp)
+- iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
+- Android version: [bilgi-shuttle-android](https://github.com/bilgishuttle/bilgi-shuttle-android)
 
 ## Installation:
 ``` bash
